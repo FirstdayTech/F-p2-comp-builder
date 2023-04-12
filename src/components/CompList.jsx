@@ -1,5 +1,5 @@
-import React from "react";
-import { Card, CardContent, Grid, Typography } from "@mui/material";
+import React from 'react';
+import { Card, CardContent, Grid, Typography } from '@mui/material';
 
 const CompList = ({ comps }) => {
   return (
@@ -12,7 +12,7 @@ const CompList = ({ comps }) => {
                 {comp.name}
               </Typography>
               <Typography variant="subtitle1" color="text.secondary">
-                Campeões: {comp.champions.join(", ")}
+                Campeões: {comp.champions.join(', ')}
               </Typography>
             </CardContent>
           </Card>

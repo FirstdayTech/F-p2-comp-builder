@@ -1,21 +1,19 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { CssBaseline } from "@mui/material";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import App from "./App";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { RouterProvider } from 'react-router-dom';
+import router from './pages';
+import theme from './theme';
+import { ThemeProvider } from '@emotion/react';
+import { CssBaseline } from '@mui/material';
+import { GlobalProvider } from './contexts/global';
 
-const theme = createTheme({
-  typography: {
-    fontFamily: [ "Roboto", "Arial", "sans-serif" ].join(","),
-  },
-});
-
-ReactDOM.render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <App />
+      <GlobalProvider>
+        <RouterProvider router={router} />
+      </GlobalProvider>
     </ThemeProvider>
-  </React.StrictMode>,
-  document.getElementById("root")
+  </React.StrictMode>
 );

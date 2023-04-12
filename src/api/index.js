@@ -1,4 +1,4 @@
-import mockDb from "./mockDb";
+import mockDb from './mockDb';
 
 const mockApiCall = () => {
   return new Promise((resolve) => {

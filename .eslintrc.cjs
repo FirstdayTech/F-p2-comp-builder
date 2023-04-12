@@ -1,24 +1,34 @@
-// eslint-disable-next-line no-undef
 module.exports = {
-  "env": {
-    "browser": true,
-    "es2021": true
+  'env': {
+    'browser': true,
+    'es2021': true
   },
-  "extends": [
-    "eslint:recommended",
-    "plugin:react/recommended"
+  'extends': [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'prettier'
   ],
-  "overrides": [
+  'overrides': [
   ],
-  "parserOptions": {
-    "ecmaVersion": "latest",
-    "sourceType": "module"
+  'parserOptions': {
+    'ecmaVersion': 'latest',
+    'sourceType': 'module'
   },
-  "plugins": [
-    "react"
+  'plugins': [
+    'react',
+    'prettier'
   ],
-  "rules": {
-    "object-curly-spacing": [ "error", "always" ],
-    "array-bracket-spacing": [ "error", "always" ],
+  ignorePatterns: ['.eslintrc.cjs'],
+  'rules': {
+    'indent': [
+      'error',
+      2
+    ],
+    'linebreak-style': ['error', 'windows'],
+    'quotes': ['error', 'single'],
+    'semi': ['error', 'always'],
+    'react/prop-types': 'off',
+    "react/jsx-max-props-per-line": ["warn", { "maximum": 1, "when": "multiline" }],
+    "object-curly-newline": ["warn", { "multiline": true, "consistent": true }],
   }
-}
+};
