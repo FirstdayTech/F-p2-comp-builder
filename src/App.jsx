@@ -18,12 +18,12 @@ const App = () => {
     {
       id: 1,
       name: "Comp 1",
-      champions: ["Aatrox", "Ahri"],
+      champions: [ "Aatrox", "Ahri" ],
     },
     {
       id: 2,
       name: "Comp 2",
-      champions: ["Aatrox", "Ahri"],
+      champions: [ "Aatrox", "Ahri" ],
     },
     // Adicione mais composições conforme necessário
   ]);
