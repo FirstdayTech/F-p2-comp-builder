@@ -1,4 +1,5 @@
 import { createTheme } from '@mui/material';
+import componentsOverrides from './overrides';
 
 const theme = createTheme({
   palette: {
@@ -7,11 +8,14 @@ const theme = createTheme({
     },
     secondary: {
       main: '#ff4081',
-    }
+    },
   },
   typography: {
     fontFamily: [ 'Roboto', 'Arial', 'sans-serif' ].join(','),
   },
-})
+  components: {
+    ...componentsOverrides
+  }
+});
 
-export default theme
+export default theme;

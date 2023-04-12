@@ -2,6 +2,8 @@ import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import RootLayout from './layout';
 import { Navigate } from 'react-router-dom';
+import MyComps from './MyComps';
+import Champtions from './Champions';
 
 const router = createBrowserRouter([
   {
@@ -14,11 +16,11 @@ const router = createBrowserRouter([
       },
       {
         path: '/my-comps',
-        element: <div>comps</div>
+        element: <MyComps />
       },
       {
         path: '/champions',
-        element: <div>champions</div>
+        element: <Champtions />
       }
     ]
   },

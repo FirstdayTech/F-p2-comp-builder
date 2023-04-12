@@ -1,5 +1,5 @@
-import React from "react";
-import { TextField } from "@mui/material";
+import React from 'react';
+import { Box, TextField } from '@mui/material';
 
 
 const SearchBar = ({ onSearch }) => {
@@ -8,16 +8,17 @@ const SearchBar = ({ onSearch }) => {
   };
 
   return (
-    <div>
+    <Box sx={{ marginY: '20px' }}>
       <TextField
         label="Pesquisar campeão"
         variant="outlined"
         onChange={handleChange}
+        fullWidth
         InputProps={{
 
         }}
       />
-    </div>
+    </Box>
   );
 };
 

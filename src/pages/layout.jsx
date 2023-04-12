@@ -2,18 +2,15 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import { Container } from '@mui/material';
 import { Header, Sidebar } from '../components';
-import { useRef } from 'react';
 
-const RootLayout = () => {
-  const wrapperRef = useRef(null);
-  
+const RootLayout = () => {  
   return (
     <>
       <Header />
-      <div ref={wrapperRef} style={{ display: 'flex' }}>
-        <Sidebar baseRef={wrapperRef} />
+      <div style={{ display: 'flex' }}>
+        <Sidebar />
         <Container>
-          <main style={{ flexGrow: 1, padding: '24px' }}>
+          <main style={{ flexGrow: 1, paddingX: '24px' }}>
             <Outlet />
           </main>
         </Container>
