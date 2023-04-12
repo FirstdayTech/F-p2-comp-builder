@@ -7,19 +7,19 @@ import CompList from "./components/CompList";
 import { getChampions } from "./api";
 
 const App = () => {
-  const [champions, setChampions] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
-  const [selectedView, setSelectedView] = useState("champions");
-  const [comps, setComps] = useState([
+  const [ champions, setChampions ] = useState([]);
+  const [ searchTerm, setSearchTerm ] = useState("");
+  const [ selectedView, setSelectedView ] = useState("champions");
+  const [ comps, setComps ] = useState([
     {
       id: 1,
       name: "Comp 1",
-      champions: ["Aatrox", "Ahri"],
+      champions: [ "Aatrox", "Ahri" ],
     },
     {
       id: 2,
       name: "Comp 2",
-      champions: ["Aatrox", "Ahri"],
+      champions: [ "Aatrox", "Ahri" ],
     },
     // Adicione mais composições conforme necessário
   ]);

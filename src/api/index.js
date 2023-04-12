@@ -1,4 +1,3 @@
-import axios from "axios";
 import mockDb from "./mockDb";
 
 const mockApiCall = () => {
