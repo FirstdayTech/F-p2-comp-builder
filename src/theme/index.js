@@ -4,10 +4,10 @@ import componentsOverrides from './overrides';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#3f51b5',
+      main: '#166a1b',
     },
     secondary: {
-      main: '#ff4081',
+      main: '#063c7b',
     },
   },
   typography: {

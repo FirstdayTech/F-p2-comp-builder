@@ -7,6 +7,9 @@ import Champtions from './Champions';
 import CreateComposition from './CreateComposition';
 import EditComposition from './EditComposition';
 import ViewComp from './ViewComp';
+import Login from './auth/Login';
+import AuthLayout from './auth/layout';
+import { useGlobalContext } from '../contexts/global';
 
 const router = createBrowserRouter([
   {
@@ -15,11 +18,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Navigate to="/my-comps" replace />
+        element: <Navigate to="/auth/login" replace />
       },
       {
         path: '/my-comps',
-        element: <MyComps />,
+        element: <Protected><MyComps /></Protected>,
       },
       {
         path: '/champions',
@@ -35,10 +38,31 @@ const router = createBrowserRouter([
       },
       {
         path: '/view/:name',
-        element: <ViewComp />
-      }
+        element: <ViewComp />,
+      },
     ]
   },
+  {
+    path: '/auth',
+    element: <AuthLayout />,
+    children: [
+      {
+        path: 'login',
+        element: <Login />,
+      }
+    ]
+  }
 ]);
+
+function Protected({ children }) {
+  const { user } = useGlobalContext();
+  if (user.get().auth) {
+    return children;
+  } else {
+    return <Navigate to="/auth/login" replace />;
+  }
+}
+
+
 
 export default router;

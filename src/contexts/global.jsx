@@ -11,12 +11,17 @@ const GlobalContext = createContext({
   comps: {
     get: () => [],
     set: () => {}
+  },
+  user: {
+    get: () => ({ auth: false }),
+    set: () => {}
   }
 });
 
 export const GlobalProvider = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [comps, setComps] = useState(COMPS);
+  const [user, setUser] = useState({ auth: false, email: '' });
 
   return (
     <GlobalContext.Provider value={{
@@ -29,6 +34,10 @@ export const GlobalProvider = ({ children }) => {
       comps: {
         get: () => comps,
         set: setComps
+      },
+      user: {
+        get: () => user,
+        set: setUser
       }
     }}>
       {children}
