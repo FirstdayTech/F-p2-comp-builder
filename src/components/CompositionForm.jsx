@@ -10,7 +10,9 @@ import {
   ListItemText,
   ListItemSecondaryAction,
   Stack,
-  Autocomplete
+  Autocomplete,
+  ListItemIcon,
+  Avatar
 } from '@mui/material';
 import champions from '../db/champions';
 import AddIcon from '@mui/icons-material/Add';
@@ -133,11 +135,16 @@ const CompositionForm = ({ initialState, onSave, onChange, readonly }) => {
       <List>
         {selectedChampions.map((champion) => (
           <ListItem key={champion.name}>
+            <ListItemIcon>
+              <Avatar src={champion.images.face} alt={champion.name} />
+            </ListItemIcon>
             <ListItemText
               primary={champion.name}
-              secondary={`${champion.type ?? 'Físico'} - ${champion.tags.join(', ')} - ${
-                champion.mostPlayedRole ?? 'Top'
-              }`}
+              secondary={
+                `${champion?.roles?.join(', ') ?? 'Top'} |
+                ${champion.type ?? 'Físico'} - 
+                ${champion.tags.join(', ')}`.replace(/\n/g, '')
+              }
             />
             <ListItemSecondaryAction>
               <IconButton

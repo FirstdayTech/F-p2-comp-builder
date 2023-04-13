@@ -2,7 +2,6 @@ import React from 'react';
 import { Card, CardContent, CardMedia, Grid, Typography } from '@mui/material';
 
 const ChampionList = ({ champions }) => {
-  
   return (
     <Grid container spacing={4} sx={{ maxHeight: 'calc(100vh - 240px)', overflowY: 'auto', marginTop: '20px' }}>
       {champions.map((champion, index) => (

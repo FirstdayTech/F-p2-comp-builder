@@ -30,11 +30,11 @@ const router = createBrowserRouter([
       },
       {
         path: '/create',
-        element: <CreateComposition />
+        element: <Protected><CreateComposition /></Protected>
       },
       {
         path: '/edit/:name',
-        element: <EditComposition />
+        element: <Protected><EditComposition /></Protected>
       },
       {
         path: '/view/:name',
@@ -54,12 +54,12 @@ const router = createBrowserRouter([
   }
 ]);
 
-function Protected({ children }) {
+function Protected({ children, fallback }) {
   const { user } = useGlobalContext();
   if (user.get().auth) {
     return children;
   } else {
-    return <Navigate to="/auth/login" replace />;
+    return <Navigate to={fallback ?? '/auth/login'} replace />;
   }
 }
 

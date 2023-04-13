@@ -4,11 +4,14 @@ import {
   useMediaQuery,
   useTheme,
   Box,
-  Drawer
+  Drawer,
+  Button,
+  Link
 } from '@mui/material';
 import globalConfig from '../../config';
 import SidebarItem from './SidebarItem';
 import { useGlobalContext } from '../../contexts/global';
+import { Link as RouterLink } from 'react-router-dom';
 import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
 import GroupIcon from '@mui/icons-material/Group';
 import AddIcon from '@mui/icons-material/Add';
@@ -16,7 +19,7 @@ import AddIcon from '@mui/icons-material/Add';
 const Sidebar = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-  const { sidebar } = useGlobalContext();
+  const { sidebar, user } = useGlobalContext();
 
   return (
     !isMobile ? (
@@ -26,7 +29,7 @@ const Sidebar = () => {
         height: 'calc(100vh - 70px)',
         bgcolor: 'primary.light'
       }}>
-        <SidebarItems />
+        <SidebarItems isAuthorized={user.get().auth} />
       </Box>
     ) : (
       <Drawer
@@ -39,19 +42,40 @@ const Sidebar = () => {
           }
         }}
       >
-        <SidebarItems onClick={() => sidebar.open.set(false)} />
+        <SidebarItems
+          isAuthorized={user.get().auth}
+          onClick={() => sidebar.open.set(false)}
+        />
       </Drawer>
     )
   );
 };
 
-const SidebarItems = ({ onClick }) => {
+const SidebarItems = ({ onClick, isAuthorized }) => {
   return (
-    <List sx={{ width: '100%' }}>
-      <SidebarItem onClick={onClick} text='Minhas comps' icon={<SportsEsportsIcon />} routePath='/my-comps' />
-      <SidebarItem onClick={onClick} text='Criar comp' icon={<AddIcon />} routePath='/create' />    
-      <SidebarItem onClick={onClick} text='Campeões' icon={<GroupIcon />} routePath='/champions' />
-    </List>
+    isAuthorized ? (
+      <List sx={{ width: '100%' }}>
+        <SidebarItem onClick={onClick} text='Minhas comps' icon={<SportsEsportsIcon />} routePath='/my-comps' />
+        <SidebarItem onClick={onClick} text='Criar comp' icon={<AddIcon />} routePath='/create' />    
+        <SidebarItem onClick={onClick} text='Campeões' icon={<GroupIcon />} routePath='/champions' />
+      </List>
+    ) : (
+      <List sx={{ width: '100%' }}>
+        <Link
+          component={RouterLink}
+          to='/auth/login'
+          sx={{ margin: '24px' }}
+        >
+          <Button
+            variant='contained'
+            color='secondary'
+            sx={{ width: '80%', marginTop: '16px' }}
+          >
+            Fazer Login
+          </Button>
+        </Link>
+      </List>
+    )
   );
 };
 

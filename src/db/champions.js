@@ -7,8 +7,9 @@ const champions = [
     images: {
       splash: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_0.jpg',
       face: 'https://ddragon.leagueoflegends.com/cdn/13.7.1/img/champion/Aatrox.png'     
-    }
-  } ,
+    },
+    lanes: ['Top', 'Mid']
+  },
   
   {
     name: 'Ahri',
@@ -17,7 +18,8 @@ const champions = [
     images: {
       splash: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ahri_0.jpg',  
       face: 'https://ddragon.leagueoflegends.com/cdn/13.7.1/img/champion/Ahri.png'       
-    }
+    },
+    lanes: ['Mid']
   } ,
   
   {
@@ -27,7 +29,8 @@ const champions = [
     images: {
       splash: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Akali_0.jpg', 
       face: 'https://ddragon.leagueoflegends.com/cdn/13.7.1/img/champion/Akali.png'      
-    }
+    },
+    lanes: ['Mid', 'Top']
   } ,
   
   {
@@ -37,7 +40,8 @@ const champions = [
     images: {
       splash: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Akshan_0.jpg',
       face: 'https://ddragon.leagueoflegends.com/cdn/13.7.1/img/champion/Akshan.png'
-    }
+    },
+    lanes: ['Mid', 'Adc']
   } ,
   
   {
@@ -47,7 +51,8 @@ const champions = [
     images: {
       splash: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Alistar_0.jpg',
       face: 'https://ddragon.leagueoflegends.com/cdn/13.7.1/img/champion/Alistar.png'
-    }
+    },
+    lanes: ['Sup']
   } ,
   
   {
@@ -57,7 +62,8 @@ const champions = [
     images: {
       splash: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Amumu_0.jpg',
       face: 'https://ddragon.leagueoflegends.com/cdn/13.7.1/img/champion/Amumu.png'
-    }
+    },
+    lanes: ['Jungle']
   } ,
   
   {
@@ -67,7 +73,8 @@ const champions = [
     images: {
       splash: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Anivia_0.jpg',
       face: 'https://ddragon.leagueoflegends.com/cdn/13.7.1/img/champion/Anivia.png'
-    }
+    },
+    lanes: ['Mid']
   } ,
   
   {
@@ -77,7 +84,8 @@ const champions = [
     images: {
       splash: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Annie_0.jpg',
       face: 'https://ddragon.leagueoflegends.com/cdn/13.7.1/img/champion/Annie.png'
-    }
+    },
+    lanes: ['Mid']
   } ,
   
   {
@@ -87,7 +95,8 @@ const champions = [
     images: {
       splash: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aphelios_0.jpg',
       face: 'https://ddragon.leagueoflegends.com/cdn/13.7.1/img/champion/Aphelios.png'
-    }
+    },
+    lanes: ['Adc']
   } ,
   
   {

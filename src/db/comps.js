@@ -1,15 +1,15 @@
 const comps = [
   {
     champions: [
-      18, 99, 1, 108, 12
+      14, 84, 130, 95, 22 
     ],
-    name: 'Komp killer'
+    name: 'League of Hooks'
   },
   {
     champions: [
-      14, 49, 10, 120, 34
+      104, 44, 17, 75, 129
     ],
-    name: 'Agressiva 2'
+    name: 'League of Bush'
   }
 ];
 
