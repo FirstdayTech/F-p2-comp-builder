@@ -6,11 +6,12 @@ import {
   Box,
   Drawer
 } from '@mui/material';
-import GroupIcon from '@mui/icons-material/Group';
-import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
 import globalConfig from '../../config';
 import SidebarItem from './SidebarItem';
 import { useGlobalContext } from '../../contexts/global';
+import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
+import GroupIcon from '@mui/icons-material/Group';
+import AddIcon from '@mui/icons-material/Add';
 
 const Sidebar = () => {
   const theme = useTheme();
@@ -48,7 +49,8 @@ const SidebarItems = ({ onClick }) => {
   return (
     <List sx={{ width: '100%' }}>
       <SidebarItem onClick={onClick} text='Minhas comps' icon={<SportsEsportsIcon />} routePath='/my-comps' />
-      <SidebarItem onClick={onClick} text='Campeões' icon={<GroupIcon />} routePath='/champions' />      
+      <SidebarItem onClick={onClick} text='Criar comp' icon={<AddIcon />} routePath='/create' />    
+      <SidebarItem onClick={onClick} text='Campeões' icon={<GroupIcon />} routePath='/champions' />
     </List>
   );
 };

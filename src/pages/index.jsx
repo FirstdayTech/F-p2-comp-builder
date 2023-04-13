@@ -4,6 +4,9 @@ import RootLayout from './layout';
 import { Navigate } from 'react-router-dom';
 import MyComps from './MyComps';
 import Champtions from './Champions';
+import CreateComposition from './CreateComposition';
+import EditComposition from './EditComposition';
+import ViewComp from './ViewComp';
 
 const router = createBrowserRouter([
   {
@@ -16,11 +19,23 @@ const router = createBrowserRouter([
       },
       {
         path: '/my-comps',
-        element: <MyComps />
+        element: <MyComps />,
       },
       {
         path: '/champions',
         element: <Champtions />
+      },
+      {
+        path: '/create',
+        element: <CreateComposition />
+      },
+      {
+        path: '/edit/:name',
+        element: <EditComposition />
+      },
+      {
+        path: '/view/:name',
+        element: <ViewComp />
       }
     ]
   },

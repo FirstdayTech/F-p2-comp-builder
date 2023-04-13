@@ -1,5 +1,5 @@
-import React, { createContext, useState } from 'react';
-import { useContext } from 'react';
+import React, { createContext, useState, useContext } from 'react';
+import COMPS from '../db/comps';
 
 const GlobalContext = createContext({
   sidebar: {
@@ -7,11 +7,16 @@ const GlobalContext = createContext({
       get: () => false,
       set: () => {}
     }
+  },
+  comps: {
+    get: () => [],
+    set: () => {}
   }
 });
 
 export const GlobalProvider = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [comps, setComps] = useState(COMPS);
 
   return (
     <GlobalContext.Provider value={{
@@ -20,6 +25,10 @@ export const GlobalProvider = ({ children }) => {
           get: () => isOpen,
           set: setIsOpen
         }
+      },
+      comps: {
+        get: () => comps,
+        set: setComps
       }
     }}>
       {children}
