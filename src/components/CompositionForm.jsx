@@ -26,6 +26,7 @@ const CompositionForm = ({ initialState, onSave, onChange, readonly }) => {
   const [btnDisabled, setBtnDisabled] = useState(true);
   const [btnSaveDisabled, setBtnSaveDisabled] = useState(true);
   const [compName, setCompName] = useState(initialState.name || '');
+  const [compId] = useState(initialState.id || String(Date.now()));
 
   const handleAddChampion = () => {
     const champion = champions.find(
@@ -92,7 +93,11 @@ const CompositionForm = ({ initialState, onSave, onChange, readonly }) => {
           <Button
             variant="contained"
             disabled={btnSaveDisabled}
-            onClick={() => onSave && onSave({name: compName, champions: selectedChampions.map(champtionToId)}, resetForm)}
+            onClick={() => onSave && onSave({
+              name: compName,
+              champions: selectedChampions.map(champtionToId),
+              id: compId
+            }, resetForm)}
           >Salvar</Button>
         </Stack>
       </Stack>

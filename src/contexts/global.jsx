@@ -1,5 +1,4 @@
 import React, { createContext, useState, useContext } from 'react';
-import COMPS from '../db/comps';
 
 const GlobalContext = createContext({
   sidebar: {
@@ -20,7 +19,7 @@ const GlobalContext = createContext({
 
 export const GlobalProvider = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [comps, setComps] = useState(COMPS);
+  const [comps, setComps] = useState([]);
   const [user, setUser] = useState({ auth: false, email: '' });
 
   return (

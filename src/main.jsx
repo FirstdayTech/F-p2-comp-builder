@@ -6,6 +6,7 @@ import theme from './theme';
 import { ThemeProvider } from '@emotion/react';
 import { CssBaseline } from '@mui/material';
 import { GlobalProvider } from './contexts/global';
+import './api';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
